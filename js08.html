@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    输入框：<input type="text" id="content">
+    <script>
+        function myInput() {
+            var content = document.getElementById("content").value;
+            if(content == null || content.length <= 0) {
+                alert('请输入信息');
+            } else{
+                alert('输入成功');
+            }
+        }
+    </script>
+    <button type="button" onclick="myInput()">按钮</button>
+</body>
+</html>

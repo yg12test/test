@@ -1,0 +1,21 @@
+远程仓库密码：admin
+
+remote 远程
+-v 查看详细信息的
+
+
+出错提示：git failed to push some refs to git……
+
+如何解决failed to push some refs to git?
+2
+  解决步骤：git pull --rebase origin master 
+
+如何解决failed to push some refs to git?
+3
+  解决步骤：git push -u origin master
+
+这样，您就可以重放您的本地提交在新更新的原始/master之上。
+
+
+
+Welcome to Alibaba Cloud Elastic Compute Service 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <p> DOM 是非常有用的。</p>
+        <p>该实例展示了  <b>getElementsByTagName</b> 方法</p>
+    </div>
+    <script>
+        var eleId = document.getElementById("main");
+        var eleName = eleId.getElementsByTagName("p");
+        for(var i = 0; i < eleName.length; i++) {
+            document.write(eleName[i].textContent+"<br/>");
+        }
+    </script>
+</body>
+</html>

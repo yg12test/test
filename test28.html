@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
+    </script>
+    <style>
+        .descendants * {
+            border: blue 1px solid;
+            color: blueviolet;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("p").children().css({"color":"red","border":"1px soild red"});
+        });
+    </script>
+</head>
+<body class="descendants">
+    <div>
+        <p>p(父元素)
+            <span>span(子元素)</span>
+        </p>
+    </div>
+    <div>
+        <p>p(父元素)
+            <span>span(子元素)</span>
+        </p>
+    </div>
+</body>
+</html>

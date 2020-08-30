@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="d1">
+        <p id="p1">这是一个段落</p>
+        <p id="p2">这是另一个段落</p>
+        <p id="p3">这是一个新的段落</p>
+    </div>
+
+    <script>
+        var para = document.createElement("p");
+        var node = document.createTextNode("这是一个新的节点");
+        para.appendChild(node);
+
+        var divEle = document.getElementById("d1");
+        var p1Ele = document.getElementById("p1");
+        divEle.replaceChild(para, p1Ele);
+    </script>
+</body>
+</html>

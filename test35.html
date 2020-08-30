@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+        .login-title {
+            margin: 0 auto;
+            text-align: center;
+            width: 600px;
+        }
+    </style>
+</head>
+<body class="login-title">
+    <div >
+        <h1>问卷调查</h1>
+    </div>
+
+    <div >
+        <form>
+            <label>姓名:</label>
+            <input type="text" name="name" id="name"><br/>
+            
+            <label>年龄:</label>
+            <input type="text" name="age" id="age"><br/>
+            
+            <label>性别:</label>
+            <input type="radio" name="sex" value="1">男
+            <input type="radio" name="sex" value="2">女<br/>
+
+            <label>爱好:</label>
+            <input type="checkbox" name="favorite" value="1">蓝球
+            <input type="checkbox" name="favorite" value="2">足球
+            <input type="checkbox" name="favorite" value="3">乒乓球<br/>
+
+            <label>省份:</label>
+            <select>
+                <option value="">请选择</option>
+                <option value="1">河南</option>
+                <option value="2">河北</option>
+            </select><br/>
+
+            <button style="margin-top: 20px;" id="login">提交</button>
+        </form>
+    </div>
+
+
+    <script>
+        $(function() {
+            var data = {"code":0, "msg": "success", data: {"name": "张三", "age": 20, "sex":1, "favorite":"1,3", "sf": 2}};
+
+            $("#name").val(data.data.name);
+            $("#age").val(data.data.age);
+            
+            var sexArr = $("input[name='sex']");
+            for (var i=0 ; i<sexArr.length; i++) {
+                if ($(sexArr[i]).val() == data.data.sex) {
+                    $(sexArr[i]).attr("checked", "checked");//  sexArr.attr("id")  sexArr.attr("name" ,"hello")
+                }
+            }
+
+            var favoriteArr = data.data.favorite.split(",");
+
+            var favoriteArrEle = $("input[name='favorite']");
+            for (var i=0 ; i<favoriteArrEle.length; i++) {
+                for (var j=0; j<favoriteArr.length; j++) {
+                    if ($(favoriteArrEle[i]).val() == favoriteArr[j]) {
+                        $(favoriteArrEle[i]).attr("checked", "checked");//  sexArr.attr("id")  sexArr.attr("name" ,"hello")
+                    }
+                }
+                
+            }
+
+            var optionArr =  $("#sf option");//找到所有的子元素
+            for(var i = 0; i < optionArr.length; i++) {
+                if($(optionArr[i]).val() == data.data.sf){
+                    $(optionArr[i]).attr("selected","selected");
+                }
+            }
+            console.log(optionArr);
+            
+        })
+    </script>
+
+    <script>
+        $(function() {
+            var data = {"code":0, "msg": "success", data: {"name": "张三", "age": 20, "sex": 1, "favorite":"1,2,3", "sf": 1}};
+
+            $("#login").on('click', function() {
+                var username = $("#username").val();
+                var password = $("#password").val();
+
+                if (username == null || username.length < 1) {
+                    alert('');
+                    return;
+                }
+
+                if (username == null || username.length < 1) {
+                    alert('');
+                    return;
+                }
+
+                $.ajax({
+                    url: '',
+                    type: 'get',
+                    data: {},
+                    success: function(ret) {
+                        if (ret.code == 0) {
+                            location.href = "/sdfsadxx";
+                        } else {
+                            alert('');
+                        }
+                    }, 
+                    error: function() {
+
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+</html>

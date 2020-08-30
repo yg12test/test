@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#but1").click(function(){
+                $("img").before("<b>之前</b>");
+            });
+            $("#but2").click(function(){
+                $("img").after("<b>之后</b>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="D:\资料\logo.png"/><br/>
+    <button id="but1">之前插入</button>
+    <button id="but2">之后插入</button>
+</body>
+</html>

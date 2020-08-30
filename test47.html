@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="b1">按钮</button>
+    <h1 id="h1"></h1>
+    <script>
+        var b1 = document.getElementById("b1");
+        b1.addEventListener("mouseover", mover);
+        b1.addEventListener("click", mcli);
+        b1.addEventListener("mouseout", mout);
+
+        function mover() {
+            document.getElementById("h1").innerHTML += "mover show!<br/>";
+        }
+
+        function mcli() {
+            document.getElementById("h1").innerHTML += "mcli show!<br/>";
+        }
+
+        function mout() {
+            document.getElementById("h1").innerHTML += "MOUT show! <br/>";
+        }
+    </script>
+</body>
+</html>

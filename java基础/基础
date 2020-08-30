@@ -1,0 +1,23 @@
+线程池的作用：1、限定线程的个数，不会导致由于线程过多导致系统缓慢或崩溃
+             2、线程池不需要每次都去创建或销毁，节约资源
+jsp和servlet的相同点和不同点
+    相同点：jsp是servlet的扩展，所有的jsp文件都被翻译为一个继承HttpServlet的类，jsp最终也是个Servlet
+    不同点：jsp侧重视图，servlet注重控制逻辑
+
+四大内置对象：
+    request：用户端的请求
+    session：与请求相关的会话期
+    application：正在执行的内容
+    pageContext:网页的属性
+
+
+常用的关系型数据库：
+mysql， oracle， sqlserver等
+常用的非关系型数据库：
+redis， memcache， mogodb等
+
+
+二叉树的三种遍历方式：
+    前序遍历：根-左-右
+    中序遍历：左-根-右
+    后序遍历：左-右-根

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("span").hover(function(){
+                $("span").css("background-color","red");
+            },function(){
+                $("span").css("background-color","white");
+            });
+        });
+    </script>
+</head>
+<body>
+   
+    <div class="p1">
+        <span style="width: 100px; height: 500px; display: inline;" >这是一个字段</span>
+        <span style="width: 100px; height: 500px; display: inline-block;" >这是一个字段</span>
+    </div>
+</body>
+</html>
+
+<!-- display: inline-block将内联元素转换的内敛块元素 -->

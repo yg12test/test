@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p"></p>
+    <script>
+        function show() {
+            var i = 1;
+            var num = 0;
+            while(i <= 100) {
+                num += i;
+                i++;
+            }
+            document.getElementById("p").innerHTML = num;
+        }
+    </script>
+
+    <button type="button" onclick="show()">按钮</button>
+</body>
+</html>

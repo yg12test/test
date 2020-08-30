@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function myDemo() {
+            for(var i = 0; i < 5; i++) {
+                if(i == 4) {
+                    document.write(i);
+                } else {
+                    document.write(i + ",");
+                }
+            }
+        }
+
+        function myFunction() {
+            var x;
+            var text = "";
+            var person = {name:"zhangsan",age : 1, date : Date()}
+            for(x in person) {
+                text = text + person[x];
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+
+        document.getElementById("demo").innerHTML = 
+        typeof "join" + "<br/>" + 
+        typeof 0 + "<br/>" +
+        typeof false + "<br/>" +
+        typeof 0.0 + "<br/>" +
+        typeof 'a' + "<br/>" +
+        typeof [0,1]
+        
+        
+    </script>    
+    <button type="button" onclick="myFunction()">按钮</button>
+</body>
+</html>

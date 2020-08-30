@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p"></p>
+    <script>
+        var myObject = {
+            name : "zhangsan",
+            age : 11,
+            obj : function() {
+                return this.name + "--" + this.age;
+            }
+        }
+        document.getElementById("p").innerHTML = myObject.obj();
+    </script>
+</body>
+</html>

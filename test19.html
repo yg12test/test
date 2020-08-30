@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
+    </script>
+    <script>
+       function appendText() {
+           var test1 = "<p>文本</p>";
+           var test2 = $("<p></p>").text("文本");
+           var test3 = document.createElement("p");
+           test3.innerHTML("文本");
+           $("body").append(test1, test2, test3);
+       }
+    </script>
+</head>
+<body>
+    <p>这是一个段落</p>
+    <button onclick="appendText()">追加文本</button>
+</body>
+</html>

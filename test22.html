@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#but1").click(function(){
+                $("h1, h2, #p1").addClass("color");
+                $("div").addClass("important");
+            });
+
+            $("#but2").click(function(){
+                $("#div1").addClass("important color");
+            });
+        });
+    </script>
+    <style>
+        .color {
+            color: chartreuse;
+        }
+
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <button id="but1">为元素添加class</button>
+    <button id="but2">为第一个div元素添加类</button>
+    <br/>
+    <h1>标题1</h1>
+    <h2>标题2</h2>
+    <p id="p1">这是一个段落</p>
+    <p id="p2">这是另一个段落</p>
+    <div id="div1">这是一些重要的文本</div>
+    <div>这是一些文本</div>
+</body>
+</html>

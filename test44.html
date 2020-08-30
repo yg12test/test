@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<head>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("name");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    
+    <label>名称：</label>
+    <input type="text" id="name" onchange="myFunction()">
+    <p>离开输入框值会变大</p>
+</body>
+</html>

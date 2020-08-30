@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    输入框：<input id="num">
+    <button type="button" onclick="myNum()">按钮</button>
+    <p id="p"></p>
+    <script>
+        function myNum() {
+            var x, text;
+            x = document.getElementById("num").value;
+            if(isNaN(x) || x < 1     || x >= 10) {
+                text = "输入错误";
+            } else {
+                text = "输入成功";
+            }
+            document.getElementById("p").innerHTML = text;
+        }
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
+    </script>
+
+    <script>
+       $(document).ready(function(){
+        $("button").click(function(){
+            $("#div1").fadeToggle();
+            $("#div2").fadeToggle("slow");
+            $("#div3").fadeToggle(3000);
+        });
+       });
+    </script>
+</head>
+<body>
+    <button>淡入/淡出</button>
+    <!-- <p>这是一个字段</p> -->
+    <div id="div1" style="width: 80px; height: 80px; background-color: burlywood;"></div>
+    <div id="div2" style="width: 80px; height: 80px; background-color: chartreuse;"></div>
+    <div id="div3" style="width: 80px; height: 80px; background-color: cornflowerblue;"></div>
+</body>
+</html>

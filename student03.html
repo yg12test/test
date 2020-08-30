@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function studentAdd() {
+            var nameEle = document.getElementById("name");
+            var name = nameEle.value;
+            if (name == null || name.length <= 0){
+                alert("名字不能为空");
+                return false;
+            }
+
+            var birthdayEle = document.getElementById("birthday");
+            var birthday = birthdayEle.value;
+            if (birthday == null || birthday.length <= 0){
+                alert("出生日期不能为空");
+                return false;
+            }
+
+            var sex = 0;
+            var sexArr = document.getElementsByName("sex");
+            for (var i = 0; i < sexArr.length; i ++){
+               if (sexArr[i].checked){
+                   sex = sexArr[i].value;
+               }
+            }
+            if (sex == 0){
+                alert("性别不能为空");
+                return false;
+            }
+
+            var provinceEle = document.getElementById("province");
+            var province = provinceEle.value;
+            if (province == ""){
+                alert("省份不能为空");
+                return false;
+            }
+
+            var sports = "";
+            var sportsArr = document.getElementsByName("sports");
+            for (var i = 0; i < sportsArr.length; i++){
+                if (sportsArr[i].checked){
+                    sports += sportsArr[i]+",";
+                }
+            }
+            if (sports.length <= 0){
+                alert("爱好不能为空");
+                return false;
+            }
+            sports = sports.substring(0, sports.length-1);
+            return true;
+        }
+    </script>
+    <form action="/student/addPost" method="post">
+        名字:<input type="text" name="name" id="name"/><br/>
+        出生日期:<input type="text" name="birthday" id="birthday"/><br/>
+        性别:<input type="radio" name="sex" value="1">男
+            <input type="radio" name="sex" value="2">女<br/>
+        省份:<select id="province" name="province">
+                <option value="">--请选择--</option>
+                <option value="1">河南</option>
+                <option value="2">河北</option>
+            </select><br/>
+        爱好:<input type="checkbox" name="sports" value="1"/>足球
+            <input type="checkbox" name="sports" value="2"/>蓝球<br/>
+        <input type="submit" value="提交" onclick="return studentAdd()">
+    </form>
+</body>
+</html>

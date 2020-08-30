@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="str"></p>
+    <script>
+        var s = "abcABC"
+        function myStr(s) {
+            var length = document.getElementById("str").innerHTML = s[4];
+        }
+    </script>
+    <button type="button" onclick="myStr(s)">按钮</button>
+</body>
+</html>

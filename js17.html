@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myshow() {
+            try {
+                add("Welcome guest!");
+            } catch (err) {
+                txt="本页有一个错误。\n\n";
+                txt+="错误描述：" + err.myshow + "\n\n";
+                txt+="点击确定继续。\n\n";
+                alert(txt);
+            }
+        } 
+    </script>
+
+    <button type="button" onclick="myshow()">按钮</button>
+</body>
+</html>

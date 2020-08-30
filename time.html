@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>时间换算</title>
+</head>
+<body>
+    <input type="text" name="time" id="time"/>
+    <select name="fromTime" id="fromTime">
+        <option value="1">
+            年
+        </option>
+        <option value="2">
+            周
+        </option>
+        <option value="3">
+            天
+        </option>
+        <option value="4">
+            时
+        </option>
+        <option value="5" selected="selected">
+            分
+        </option>
+        <option value="6">
+            秒
+        </option>
+        <option value="7">
+            毫秒
+        </option>
+        <option value="8">
+            微秒
+        </option>
+        <option value="9">
+            纳秒
+        </option>
+    </select>
+    =
+    <select name="toTime" id="toTime">
+        <option value="1">
+            年
+        </option>
+        <option value="2">
+            周
+        </option>
+        <option value="3">
+            天
+        </option>
+        <option value="4">
+            时
+        </option>
+        <option value="5">
+            分
+        </option>
+        <option value="6" selected="selected">
+            秒
+        </option>
+        <option value="7">
+            毫秒
+        </option>
+        <option value="8">
+            微秒
+        </option>
+        <option value="9">
+            纳秒
+        </option>
+    </select>
+
+    <button name="transfer" id="transfer">换算</button>
+
+    <div id="result">
+        
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#transfer").click(function(){
+                console.log("转换完成");
+                var timeVal = $("#time").val();//输入的值
+                var fromTimeVal = $("#fromTime").val();//想要替换的值
+                var toTimeVal = $("#toTime").val();//替换之后的值
+
+
+                // console.log(timeVal,fromTimeVal,toTimeVal);
+                if(fromTimeVal == 5) {
+                    var ns = minuteToNs(timeVal); //分钟转化为纳秒  
+                    $("#result").html(timeVal + "分=" + ns + "纳秒");
+                    if(toTimeVal == 6) {
+                        var resultTime = nsToSecond(ns);
+                        $("#result").html(timeVal + "分=" + resultTime + "秒");
+                    } else if(toTimeVal == 7) {//分钟转换为毫秒
+                        var resultTime = minuteToMicrosecond(timeVal);
+                        $("#result").html(timeVal + "分=" + resultTime + "毫秒");
+                    } else if(toTimeVal == 8) {
+                        
+                    }
+                } else if(fromTimeVal == 6) {//把秒转换为纳秒
+                    var ns = secondToNs(timeVal);
+                    if(toTimeVal == 9) {
+
+                    }
+                    $("#result").html(timeVal + "秒=" + ns + "纳秒");
+                } else if(fromTimeVal == 8) {
+                    var ns = microsecondToNs(timeVal);
+                    if(toTimeVal == 9) {
+                        $("#result").html(timeVal + "微秒=" + ns + "纳秒");
+                    } else if(toTimeVal == 5){//微秒转换为分
+                        var resultTime = nsToMinute(ns);
+                        $("#result").html(timeVal + "微秒=" + resultTime + "分");
+                    }
+                    
+                }
+            });
+            
+            /**
+             * 分钟转化为纳秒
+             */
+            function minuteToNs(time) {
+                return time * 60 * 1000 * 1000000;
+            }
+
+            /**
+             * 纳秒转换为秒 
+             */
+            function nsToSecond(time) {
+                return time / 1000000 / 1000;
+            }
+
+            /**
+             * 秒转换为纳秒 
+             */
+            function secondToNs(time) {
+                return time * 1000 * 1000 * 1000;
+            }
+            
+            /**
+             *  微秒转换为纳秒 
+             */
+            function microsecondToNs(time) {
+                return time * 1000;
+            }
+            
+            /**
+             * 纳秒转换为分
+             */
+            function nsToMinute(time) {
+                return nsToSecond(time) / 60;
+            }
+
+             /**
+             * 分钟转化为豪秒
+             */
+            function minuteToMicrosecond(time) {
+                return time * 60 * 1000;
+            }
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+        });
+    </script>
+</body>
+</html>

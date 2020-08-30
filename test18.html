@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#but1").click(function(){
+                $("p").append("<b>字段</b>");
+            });
+            $("#but2").click(function(){
+                $("ol").append("<li>List item</li>")
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>这是一个字段</p>
+    <p>这是另一个字段</p>
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    <button id="but1">添加文件</button>
+    <button id="but2">添加列表项</button>
+</body>
+</html>

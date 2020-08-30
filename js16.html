@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Hello World!!!</p>
+    <script>
+        function myshow() {
+            var text = document.getElementById("demo").innerHTML;
+            var value = text.replace(/world!!!/i, "World");
+            document.getElementById("demo").innerHTML = value;
+        }
+    </script>
+    <button type="button" onclick="myshow()">按钮</button>
+</body>
+</html>

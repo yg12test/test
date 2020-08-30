@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var str = "1-20,2-20,3-30,4-10,5-15,6-5";
+       var strArr = str.split(",");
+       var idArr = [];
+       var weightArr = [];
+       for(var x = 0; x < strArr.length; x++) {
+        //    console.log(strArr[x]);
+            var arr = strArr[x].split("-");
+            idArr.push(arr[0]);
+            weightArr.push(arr[1]);
+           
+       }
+
+       for(var x = 0; x < idArr.length; x++) {
+            console.log("idArr的值" + idArr[x]);
+       }
+
+       var weightSumArr = [];
+       var weightSum = 0;
+       for(var x = 0; x < weightArr.length; x++) {
+            
+            weightSum = weightSum + parseInt(weightArr[x]);
+
+            weightSumArr.push(weightSum);
+            console.log(weightSum);
+       }
+       //获取随机数
+       var random = parseInt(1 + Math.random() * 100)
+       console.log(random);
+       //将随机数添加到数组中
+       weightSumArr.push(random);
+
+       function sortNumber(a,b){//升序
+            return a - b
+       }
+
+       //将数组进行排序
+       weightSumArr.sort(sortNumber);
+       console.log(weightSumArr);
+       //获取随机数的角标
+       var index = weightSumArr.indexOf(random);
+       
+       console.log(weightSumArr.indexOf(random));
+       //获取idArr的值
+       console.log(idArr[index]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myshow() {
+            var element = document.getElementById("myimg");
+            if(element.src.match("timg")) {
+                element.src = "logo.png";
+            } else {
+                element.src = "timg.jpg";
+            }
+        }
+    </script>
+
+    <img id="myimg" src="timg.jpg" onclick="myshow()" width="100" height="200">
+</body>
+</html>
