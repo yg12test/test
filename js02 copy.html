@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function trim(s) {
+            var start, end;
+            start = 0;
+            end = s.length-1;
+
+            while(start <= end && start.charAt(start) == ' ') {
+                start ++;
+            }
+
+            while(start <= end && end.charAt(end) == " ") {
+                end --;
+            }
+            return s.subString(start, end+1);
+        }
+        var s = "   abc a  ";
+        alert("abc".bold());
+    </script>
+</body>
+</html>
